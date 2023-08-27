@@ -152,7 +152,7 @@ export default function PageDetail() {
             <div className={styles.mobileContainer}>
               <div className={styles.mobileDetailContainer}>
                 <div className={styles.mobileCountContiner}>
-                  <div className={styles.mobileNumberHeaderPurple}>03</div>
+                  <div className={styles.mobileNumberHeader}>03</div>
                   <div className={styles.mobileRectangleContainer}>
                     <Image
                       src="/rectangle.svg"

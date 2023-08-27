@@ -1,6 +1,7 @@
 .root {
   font-family: "Roboto", sans-serif;
   background-color: #ffffff;
+  color: #000000;
 }
 /************************** Image Desktop ***********************************/
 
@@ -42,7 +43,7 @@
   top: 3%;
   @media screen and (max-width: 960px) {
     width: 90%;
-    left: -33vh;
+    left: -37.5vh;
     top: 13%;
   }
 }
@@ -213,6 +214,7 @@
 .mobile {
   font-family: "Roboto", sans-serif;
   background-color: #ffffff;
+  color: #000000;
   .mainHeader {
     font-weight: 400;
     font-size: 50px;
@@ -250,12 +252,6 @@
       font-weight: 400;
       font-size: 18px;
       line-height: 21px;
-    }
-    .mobileNumberHeaderPurple {
-      font-weight: 400;
-      font-size: 18px;
-      line-height: 21px;
-      color: #5e3db3;
     }
     .mobileRectangleContainer {
       margin-top: -0.45rem;
