@@ -26,7 +26,9 @@ export default function PageDetail() {
   const isMobile = useMemo(() => screenWidth <= 600, [screenWidth]);
 
   if (screenWidth === 0) return <></>;
-  return (
+  return isMobile ? (
+    <PageDetailMobile />
+  ) : (
     <>
       <div className={styles.root}>
         <div>
