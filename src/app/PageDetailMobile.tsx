@@ -2,9 +2,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import React, { useMemo, useState } from "react";
-import PlusPurple from "../../public/plusPurple.svg";
-import PlusLight from "../../public/plusLight.svg";
-import RecBackPurple from "../../public/recBackPurple.svg";
 
 export default function PageDetail() {
   const [page, setPage] = useState(0);
@@ -24,8 +21,8 @@ export default function PageDetail() {
                       src="/Rectangle.svg"
                       width={19}
                       height={5}
-                      objectFit="contain"
-                      alt={"Missing Footballer"}
+                      style={{ objectFit: "contain" }}
+                      alt={"Missing Rectangle"}
                     />
                   </div>
                 </div>
@@ -50,8 +47,8 @@ export default function PageDetail() {
                       src="/Rectangle.svg"
                       width={19}
                       height={5}
-                      objectFit="contain"
-                      alt={"Missing Footballer"}
+                      style={{ objectFit: "contain" }}
+                      alt={"Missing Rectangle"}
                     />
                   </div>
                 </div>
@@ -78,8 +75,8 @@ export default function PageDetail() {
                       src="/Rectangle.svg"
                       width={19}
                       height={5}
-                      objectFit="contain"
-                      alt={"Missing Footballer"}
+                      style={{ objectFit: "contain" }}
+                      alt={"Missing Rectangle"}
                     />
                   </div>
                 </div>
@@ -109,8 +106,8 @@ export default function PageDetail() {
                       src="/Rectangle.svg"
                       width={19}
                       height={5}
-                      objectFit="contain"
-                      alt={"Missing Footballer"}
+                      style={{ objectFit: "contain" }}
+                      alt={"Missing Rectangle"}
                     />
                   </div>
                 </div>
@@ -135,8 +132,8 @@ export default function PageDetail() {
                       src="/Rectangle.svg"
                       width={19}
                       height={5}
-                      objectFit="contain"
-                      alt={"Missing Footballer"}
+                      style={{ objectFit: "contain" }}
+                      alt={"Missing Rectangle"}
                     />
                   </div>
                 </div>
@@ -161,8 +158,8 @@ export default function PageDetail() {
                       src="/Rectangle.svg"
                       width={19}
                       height={5}
-                      objectFit="contain"
-                      alt={"Missing Footballer"}
+                      style={{ objectFit: "contain" }}
+                      alt={"Missing Rectangle"}
                     />
                   </div>
                 </div>
@@ -185,11 +182,10 @@ export default function PageDetail() {
           <div style={{ display: "flex", justifyContent: "center" }}>
             <div className={styles.mobileFootballer}>
               <Image
-                style={{ zIndex: 2 }}
+                fill
+                style={{ zIndex: 2, objectFit: "contain" }}
                 src="/footballerPC.png"
-                layout="fill"
-                objectFit="contain"
-                alt={"Missing Footballer"}
+                alt={"Missing footballerPC"}
               />
               <div
                 style={{
@@ -209,10 +205,10 @@ export default function PageDetail() {
                 >
                   <div className={styles.plusContainer}>
                     <Image
-                      src={PlusPurple}
-                      layout="fill"
-                      objectFit="contain"
-                      alt={"Missing Footballer"}
+                      fill
+                      src="/plusPurple.svg"
+                      style={{ objectFit: "contain" }}
+                      alt={"Missing plusPurple"}
                     />
                   </div>
                 </div>
@@ -226,10 +222,10 @@ export default function PageDetail() {
                 >
                   <div className={styles.plusContainer}>
                     <Image
-                      src={PlusLight}
-                      layout="fill"
-                      objectFit="contain"
-                      alt={"Missing Footballer"}
+                      fill
+                      src="/plusLight.svg"
+                      style={{ objectFit: "contain" }}
+                      alt={"Missing plusLight"}
                     />
                   </div>
                 </div>
@@ -242,10 +238,10 @@ export default function PageDetail() {
                 >
                   <div className={styles.rectangleBackMobileContainer}>
                     <Image
-                      src={RecBackPurple}
-                      layout="fill"
-                      objectFit="contain"
-                      alt={"Missing Footballer"}
+                      fill
+                      src="/recBackPurple.svg"
+                      style={{ objectFit: "contain" }}
+                      alt={"Missing recBackPurple"}
                     />
                   </div>
                 </div>
@@ -303,10 +299,9 @@ export default function PageDetail() {
               <div style={{ display: "flex", justifyContent: "center" }}>
                 <div className={styles.mobileFootballer}>
                   <Image
-                    style={{ zIndex: 2 }}
+                    fill
+                    style={{ zIndex: 2, objectFit: "contain" }}
                     src="/basketball.png"
-                    layout="fill"
-                    objectFit="contain"
                     alt={"Missing Footballer"}
                   />
                   <div
@@ -327,9 +322,9 @@ export default function PageDetail() {
                     >
                       <div className={styles.plusContainer}>
                         <Image
-                          src={PlusPurple}
-                          layout="fill"
-                          objectFit="contain"
+                          fill
+                          src="/plusPurple.svg"
+                          style={{ objectFit: "contain" }}
                           alt={"Missing Footballer"}
                         />
                       </div>
@@ -344,9 +339,9 @@ export default function PageDetail() {
                     >
                       <div className={styles.plusContainer}>
                         <Image
-                          src={PlusLight}
-                          layout="fill"
-                          objectFit="contain"
+                          fill
+                          src="/plusLight.svg"
+                          style={{ objectFit: "contain" }}
                           alt={"Missing Footballer"}
                         />
                       </div>
@@ -361,9 +356,9 @@ export default function PageDetail() {
                     >
                       <div className={styles.plusContainer}>
                         <Image
-                          src={PlusPurple}
-                          layout="fill"
-                          objectFit="contain"
+                          fill
+                          src="/plusPurple.svg"
+                          style={{ objectFit: "contain" }}
                           alt={"Missing Footballer"}
                         />
                       </div>
@@ -373,14 +368,14 @@ export default function PageDetail() {
                         zIndex: 1,
                         position: "absolute",
                         top: "48%",
-                        left:'14%'
+                        left: "14%",
                       }}
                     >
                       <div className={styles.rectangleBackMobile2Container}>
                         <Image
-                          src={RecBackPurple}
-                          layout="fill"
-                          objectFit="contain"
+                          fill
+                          src="/recBackPurple.svg"
+                          style={{ objectFit: "contain" }}
                           alt={"Missing Footballer"}
                         />
                       </div>
@@ -390,14 +385,14 @@ export default function PageDetail() {
                         zIndex: 1,
                         position: "absolute",
                         top: "11%",
-                        right:'10%'
+                        right: "10%",
                       }}
                     >
                       <div className={styles.rectangleBackMobile3Container}>
                         <Image
-                          src={RecBackPurple}
-                          layout="fill"
-                          objectFit="contain"
+                          fill
+                          src="/recBackPurple.svg"
+                          style={{ objectFit: "contain" }}
                           alt={"Missing Footballer"}
                         />
                       </div>
