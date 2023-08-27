@@ -86,7 +86,7 @@ export default function PageDetail() {
                       zIndex: 1,
                       position: "absolute",
                       top: "-1%",
-                      right: "23%",
+                      right: "24%",
                     }}
                   >
                     <div className={styles.rectangleBackContainer}>

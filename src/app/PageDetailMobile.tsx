@@ -18,7 +18,7 @@ export default function PageDetail() {
                   <div className={styles.mobileNumberHeader}>01</div>
                   <div className={styles.mobileRectangleContainer}>
                     <Image
-                      src="/Rectangle.svg"
+                      src="/rectangle.svg"
                       width={19}
                       height={5}
                       style={{ objectFit: "contain" }}
@@ -44,7 +44,7 @@ export default function PageDetail() {
                   <div className={styles.mobileNumberHeader}>02</div>
                   <div className={styles.mobileRectangleContainer}>
                     <Image
-                      src="/Rectangle.svg"
+                      src="/rectangle.svg"
                       width={19}
                       height={5}
                       style={{ objectFit: "contain" }}
@@ -72,7 +72,7 @@ export default function PageDetail() {
                   <div className={styles.mobileNumberHeader}>03</div>
                   <div className={styles.mobileRectangleContainer}>
                     <Image
-                      src="/Rectangle.svg"
+                      src="/rectangle.svg"
                       width={19}
                       height={5}
                       style={{ objectFit: "contain" }}
@@ -103,7 +103,7 @@ export default function PageDetail() {
                   <div className={styles.mobileNumberHeader}>01</div>
                   <div className={styles.mobileRectangleContainer}>
                     <Image
-                      src="/Rectangle.svg"
+                      src="/rectangle.svg"
                       width={19}
                       height={5}
                       style={{ objectFit: "contain" }}
@@ -129,7 +129,7 @@ export default function PageDetail() {
                   <div className={styles.mobileNumberHeader}>02</div>
                   <div className={styles.mobileRectangleContainer}>
                     <Image
-                      src="/Rectangle.svg"
+                      src="/rectangle.svg"
                       width={19}
                       height={5}
                       style={{ objectFit: "contain" }}
@@ -155,7 +155,7 @@ export default function PageDetail() {
                   <div className={styles.mobileNumberHeaderPurple}>03</div>
                   <div className={styles.mobileRectangleContainer}>
                     <Image
-                      src="/Rectangle.svg"
+                      src="/rectangle.svg"
                       width={19}
                       height={5}
                       style={{ objectFit: "contain" }}
