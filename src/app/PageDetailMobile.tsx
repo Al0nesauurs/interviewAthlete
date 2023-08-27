@@ -11,7 +11,7 @@ export default function PageDetail() {
     switch (page) {
       case 0:
         return (
-          <div className={styles.greyContainer}>
+          <div className={styles.mobileGreyContainer}>
             <div className={styles.mobileContainer}>
               <div className={styles.mobileDetailContainer}>
                 <div className={styles.mobileCountContiner}>
@@ -37,7 +37,7 @@ export default function PageDetail() {
         );
       case 1:
         return (
-          <div className={styles.greyContainer}>
+          <div className={styles.mobileGreyContainer}>
             <div className={styles.mobileContainer}>
               <div className={styles.mobileDetailContainer}>
                 <div className={styles.mobileCountContiner}>
@@ -65,7 +65,7 @@ export default function PageDetail() {
         );
       case 2:
         return (
-          <div className={styles.greyContainer}>
+          <div className={styles.mobileGreyContainer}>
             <div className={styles.mobileContainer}>
               <div className={styles.mobileDetailContainer}>
                 <div className={styles.mobileCountContiner}>
@@ -96,7 +96,7 @@ export default function PageDetail() {
     switch (pageBot) {
       case 0:
         return (
-          <div className={styles.greyContainer}>
+          <div className={styles.mobileGreyContainer}>
             <div className={styles.mobileContainer}>
               <div className={styles.mobileDetailContainer}>
                 <div className={styles.mobileCountContiner}>
@@ -122,7 +122,7 @@ export default function PageDetail() {
         );
       case 1:
         return (
-          <div className={styles.greyContainer}>
+          <div className={styles.mobileGreyContainer}>
             <div className={styles.mobileContainer}>
               <div className={styles.mobileDetailContainer}>
                 <div className={styles.mobileCountContiner}>
@@ -148,7 +148,7 @@ export default function PageDetail() {
         );
       case 2:
         return (
-          <div className={styles.greyContainer}>
+          <div className={styles.mobileGreyContainer}>
             <div className={styles.mobileContainer}>
               <div className={styles.mobileDetailContainer}>
                 <div className={styles.mobileCountContiner}>
@@ -178,7 +178,7 @@ export default function PageDetail() {
     <>
       <div className={styles.mobile}>
         <div>
-          <div className={styles.mainHeader}>ATHLETS</div>
+          <div className={styles.mobileMainHeader}>ATHLETS</div>
           <div style={{ display: "flex", justifyContent: "center" }}>
             <div className={styles.mobileFootballer}>
               <Image
@@ -295,7 +295,7 @@ export default function PageDetail() {
         <div>
           <div style={{ position: "relative", paddingTop: "2rem" }}>
             <div>
-              <div className={styles.mainHeader}>PLAYERS</div>
+              <div className={styles.mobileMainHeader}>PLAYERS</div>
               <div style={{ display: "flex", justifyContent: "center" }}>
                 <div className={styles.mobileFootballer}>
                   <Image
