@@ -7,6 +7,51 @@ export default function PageDetail() {
   const [page, setPage] = useState(0);
   const [pageBot, setPageBot] = useState(0);
 
+  window.addEventListener("load", (event) => {
+    document
+      ?.getElementById("renderTop")
+      ?.addEventListener("swiped", function (e) {
+        if (e?.detail.dir === "left") {
+          if (page === 2) {
+            alert("DONE");
+            setPage(0);
+          } else {
+            alert("DONE");
+            setPage(page + 1);
+          }
+        } else {
+          if (page === 0) {
+            alert("DONE");
+            setPage(2);
+          } else {
+            alert("DONE");
+            setPage(page - 1);
+          }
+        }
+      });
+    document
+      ?.getElementById("renderBot")
+      ?.addEventListener("swiped", function (e) {
+        if (e?.detail.dir === "left") {
+          if (pageBot === 2) {
+            alert("DONE");
+            setPageBot(0);
+          } else {
+            alert("DONE");
+            setPageBot(pageBot + 1);
+          }
+        } else {
+          if (pageBot === 0) {
+            alert("DONE");
+            setPageBot(2);
+          } else {
+            alert("DONE");
+            setPageBot(pageBot - 1);
+          }
+        }
+      });
+  });
+
   const renderPage = useMemo(() => {
     switch (page) {
       case 0:
@@ -249,7 +294,7 @@ export default function PageDetail() {
             </div>
           </div>
 
-          <div style={{ position: "relative" }}>
+          <div id="renderTop" style={{ position: "relative" }}>
             {renderPage}
             <div className={styles.dotContainer}>
               <div className={styles.dot}>
@@ -401,7 +446,7 @@ export default function PageDetail() {
                 </div>
               </div>
 
-              <div style={{ position: "relative" }}>
+              <div id="renderBot" style={{ position: "relative" }}>
                 {renderPageBot}
                 <div className={styles.dotContainer}>
                   <div className={styles.dot}>
