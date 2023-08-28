@@ -1,49 +1,54 @@
 "use client";
 import Image from "next/image";
 import styles from "./page.module.css";
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 
 export default function PageDetail() {
   const [page, setPage] = useState(0);
   const [pageBot, setPageBot] = useState(0);
 
-  window.addEventListener("load", (event) => {
-    let touchstartX = 0;
-    let touchendX = 0;
-
-    function checkDirection(isTop: boolean): void {
+  const [pageTmp, setPageTmp] = useState(0);
+  const [pageBotTmp, setPageBotTmp] = useState(0);
+  useEffect(() => {
+    function checkDirection(
+      isTop: boolean,
+      touchendX: number,
+      touchstartX: number
+    ): void {
       if (isTop) {
         if (touchendX < touchstartX) {
-          if (page === 2) {
-            setPage(0);
+          if (pageTmp === 2) {
+            setPage(() => 0);
           } else {
-            setPage(page + 1);
+            setPage(() => pageTmp + 1);
           }
         }
         if (touchendX > touchstartX) {
-          if (page === 0) {
-            setPage(2);
+          if (pageTmp === 0) {
+            setPage(() => 2);
           } else {
-            setPage(page - 1);
+            setPage(() => pageTmp - 1);
           }
         }
       } else {
         if (touchendX < touchstartX) {
-          if (pageBot === 2) {
-            setPageBot(0);
+          if (pageBotTmp === 2) {
+            setPageBot(() => 0);
           } else {
-            setPageBot(pageBot + 1);
+            setPageBot(() => pageBotTmp + 1);
           }
         }
         if (touchendX > touchstartX) {
-          if (pageBot === 0) {
-            setPageBot(2);
+          if (pageBotTmp === 0) {
+            setPageBot(() => 2);
           } else {
-            setPageBot(pageBot - 1);
+            setPageBot(() => pageBotTmp - 1);
           }
         }
       }
     }
+    let touchstartX = 0;
+    let touchendX = 0;
 
     document
       ?.getElementById("renderTop")
@@ -53,7 +58,7 @@ export default function PageDetail() {
 
     document?.getElementById("renderTop")?.addEventListener("touchend", (e) => {
       touchendX = e.changedTouches[0].screenX;
-      checkDirection(false);
+      checkDirection(true, touchendX, touchstartX);
     });
 
     document
@@ -64,9 +69,17 @@ export default function PageDetail() {
 
     document?.getElementById("renderBot")?.addEventListener("touchend", (e) => {
       touchendX = e.changedTouches[0].screenX;
-      checkDirection(true);
+      checkDirection(false, touchendX, touchstartX);
     });
-  });
+  }, [pageTmp, pageBotTmp]);
+
+  useEffect(() => {
+    // prevent infinite
+    if (pageTmp === page && pageBotTmp === pageBot) return;
+    setPageTmp(page);
+    setPageBotTmp(pageBot);
+  }, [page, pageBot, pageBotTmp, pageTmp]);
+
 
   const renderPage = useMemo(() => {
     switch (page) {
