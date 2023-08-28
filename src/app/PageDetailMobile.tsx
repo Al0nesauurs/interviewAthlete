@@ -10,44 +10,48 @@ export default function PageDetail() {
   window.addEventListener("load", (event) => {
     document
       ?.getElementById("renderTop")
-      ?.addEventListener("swiped", function (e) {
-        if (e?.detail.dir === "left") {
-          if (page === 2) {
-            alert("DONE");
-            setPage(0);
-          } else {
-            alert("DONE");
-            setPage(page + 1);
-          }
+      ?.addEventListener("swiped-left", function (e) {
+        if (page === 2) {
+          alert("DONE");
+          setPage(0);
         } else {
-          if (page === 0) {
-            alert("DONE");
-            setPage(2);
-          } else {
-            alert("DONE");
-            setPage(page - 1);
-          }
+          alert("DONE");
+          setPage(page + 1);
+        }
+      });
+
+    document
+      ?.getElementById("renderTop")
+      ?.addEventListener("swiped-right", function (e) {
+        if (page === 0) {
+          alert("DONE");
+          setPage(2);
+        } else {
+          alert("DONE");
+          setPage(page - 1);
         }
       });
     document
       ?.getElementById("renderBot")
-      ?.addEventListener("swiped", function (e) {
-        if (e?.detail.dir === "left") {
-          if (pageBot === 2) {
-            alert("DONE");
-            setPageBot(0);
-          } else {
-            alert("DONE");
-            setPageBot(pageBot + 1);
-          }
+      ?.addEventListener("swiped-left", function (e) {
+        if (pageBot === 2) {
+          alert("DONE");
+          setPageBot(0);
         } else {
-          if (pageBot === 0) {
-            alert("DONE");
-            setPageBot(2);
-          } else {
-            alert("DONE");
-            setPageBot(pageBot - 1);
-          }
+          alert("DONE");
+          setPageBot(pageBot + 1);
+        }
+      });
+
+    document
+      ?.getElementById("renderBot")
+      ?.addEventListener("swiped-right", function (e) {
+        if (pageBot === 0) {
+          alert("DONE");
+          setPageBot(2);
+        } else {
+          alert("DONE");
+          setPageBot(pageBot - 1);
         }
       });
   });
