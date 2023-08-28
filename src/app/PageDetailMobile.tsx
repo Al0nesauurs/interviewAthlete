@@ -8,52 +8,64 @@ export default function PageDetail() {
   const [pageBot, setPageBot] = useState(0);
 
   window.addEventListener("load", (event) => {
-    document
-      ?.getElementById("renderTop")
-      ?.addEventListener("swiped-left", function (e) {
-        if (page === 2) {
-          alert("DONE");
-          setPage(0);
-        } else {
-          alert("DONE");
-          setPage(page + 1);
+    let touchstartX = 0;
+    let touchendX = 0;
+
+    function checkDirection(isTop: boolean): void {
+      if (isTop) {
+        if (touchendX < touchstartX) {
+          if (page === 2) {
+            setPage(0);
+          } else {
+            setPage(page + 1);
+          }
         }
-      });
+        if (touchendX > touchstartX) {
+          if (page === 0) {
+            setPage(2);
+          } else {
+            setPage(page - 1);
+          }
+        }
+      } else {
+        if (touchendX < touchstartX) {
+          if (pageBot === 2) {
+            setPageBot(0);
+          } else {
+            setPageBot(pageBot + 1);
+          }
+        }
+        if (touchendX > touchstartX) {
+          if (pageBot === 0) {
+            setPageBot(2);
+          } else {
+            setPageBot(pageBot - 1);
+          }
+        }
+      }
+    }
 
     document
       ?.getElementById("renderTop")
-      ?.addEventListener("swiped-right", function (e) {
-        if (page === 0) {
-          alert("DONE");
-          setPage(2);
-        } else {
-          alert("DONE");
-          setPage(page - 1);
-        }
+      ?.addEventListener("touchstart", (e) => {
+        touchstartX = e.changedTouches[0].screenX;
       });
-    document
-      ?.getElementById("renderBot")
-      ?.addEventListener("swiped-left", function (e) {
-        if (pageBot === 2) {
-          alert("DONE");
-          setPageBot(0);
-        } else {
-          alert("DONE");
-          setPageBot(pageBot + 1);
-        }
-      });
+
+    document?.getElementById("renderTop")?.addEventListener("touchend", (e) => {
+      touchendX = e.changedTouches[0].screenX;
+      checkDirection(false);
+    });
 
     document
       ?.getElementById("renderBot")
-      ?.addEventListener("swiped-right", function (e) {
-        if (pageBot === 0) {
-          alert("DONE");
-          setPageBot(2);
-        } else {
-          alert("DONE");
-          setPageBot(pageBot - 1);
-        }
+      ?.addEventListener("touchstart", (e) => {
+        touchstartX = e.changedTouches[0].screenX;
       });
+
+    document?.getElementById("renderBot")?.addEventListener("touchend", (e) => {
+      touchendX = e.changedTouches[0].screenX;
+      checkDirection(true);
+    });
   });
 
   const renderPage = useMemo(() => {
