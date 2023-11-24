@@ -80,7 +80,6 @@ export default function PageDetail() {
     setPageBotTmp(pageBot);
   }, [page, pageBot, pageBotTmp, pageTmp]);
 
-
   const renderPage = useMemo(() => {
     switch (page) {
       case 0:
@@ -188,8 +187,8 @@ export default function PageDetail() {
                 <div className={styles.mobileDetailHeader}>CONNECTION</div>
               </div>
               <div className={styles.mobileDetailFont}>
-                Connect with coaches directly, you can ping coaches to view
-                profile.
+                Connect with talented athlete directly, you can watch their
+                skills through video showreels directly from Surface 1.
               </div>
             </div>
           </div>
@@ -214,7 +213,7 @@ export default function PageDetail() {
                 <div className={styles.mobileDetailHeader}>COLLABORATION</div>
               </div>
               <div className={styles.mobileDetailFont}>
-                Work with recruiter to increase your chance of finding talented
+                Work with recruiter to increase your chances of finding talented
                 athlete.
               </div>
             </div>
@@ -240,7 +239,7 @@ export default function PageDetail() {
                 <div className={styles.mobileDetailHeader}>GROWTH</div>
               </div>
               <div className={styles.mobileDetailFont}>
-                Save your time, recruit proper athletes for your team.
+                Save your time, recruit proper athlets for your team.
               </div>
             </div>
           </div>

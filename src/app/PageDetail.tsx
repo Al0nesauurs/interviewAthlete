@@ -6,7 +6,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import PageDetailMobile from "./PageDetailMobile";
 
 export default function PageDetail() {
-  const [screenWidth, setScreenWidth] = useState<number>(0);
+  const [screenWidth, setScreenWidth] = useState<number>(1920);
 
   const handleResize = () => {
     setScreenWidth(window.innerWidth);
@@ -19,11 +19,11 @@ export default function PageDetail() {
   }, []);
 
   const isTablet = useMemo(
-    () => screenWidth > 600 && screenWidth <= 960,
+    () => screenWidth > 767 && screenWidth <= 1440,
     [screenWidth]
   );
 
-  const isMobile = useMemo(() => screenWidth <= 600, [screenWidth]);
+  const isMobile = useMemo(() => screenWidth <= 767, [screenWidth]);
 
   if (screenWidth === 0) return <></>;
   return isMobile ? (
@@ -35,8 +35,10 @@ export default function PageDetail() {
           {/* TOP Container */}
 
           <div style={{ position: "relative" }}>
-            <div>
-              <div className={styles.footballer}>
+            <div className={styles.footballer}>
+              <div
+                className={isTablet ? styles.imageContainerTablet : undefined}
+              >
                 <Image
                   fill
                   style={{ zIndex: 2, objectFit: "contain" }}
@@ -50,7 +52,7 @@ export default function PageDetail() {
                       zIndex: 1,
                       position: "absolute",
                       top: 0,
-                      left: "45%",
+                      left: "43%",
                     }}
                   >
                     <div className={styles.plusContainer}>
@@ -68,7 +70,7 @@ export default function PageDetail() {
                       zIndex: 1,
                       position: "absolute",
                       top: "-1%",
-                      left: "42%",
+                      left: "39%",
                     }}
                   >
                     <div className={styles.plusContainer}>
@@ -85,8 +87,8 @@ export default function PageDetail() {
                       display: isTablet ? "block" : "none",
                       zIndex: 1,
                       position: "absolute",
-                      top: "-1%",
-                      right: "24%",
+                      top: "3%",
+                      right: "17%",
                     }}
                   >
                     <div className={styles.rectangleBackContainer}>
@@ -189,97 +191,101 @@ export default function PageDetail() {
 
           <div style={{ position: "relative" }}>
             <div className={styles.basketBaller}>
-              <Image
-                fill
-                style={{ zIndex: 2, objectFit: "contain" }}
-                src={"/basketball.png"}
-                alt={"Missing basketball"}
-              />
-              <div style={{ position: "relative", height: "100%" }}>
-                <div
-                  style={{
-                    zIndex: 1,
-                    position: "absolute",
-                    bottom: isTablet ? "78%" : "82%",
-                    right: isTablet ? "67%" : "65%",
-                  }}
-                >
-                  <div className={styles.plusContainer}>
-                    <Image
-                      fill
-                      src="/plusPurple.svg"
-                      style={{ objectFit: "contain" }}
-                      alt={"Missing plusPurple"}
-                    />
+              <div
+                className={isTablet ? styles.imageContainerTabletBas : undefined}
+              >
+                <Image
+                  fill
+                  style={{ zIndex: 2, objectFit: "contain" }}
+                  src={"/basketball.png"}
+                  alt={"Missing basketball"}
+                />
+                <div>
+                  <div
+                    style={{
+                      zIndex: 1,
+                      position: "absolute",
+                      bottom: isTablet ? "85%" : "82%",
+                      right: isTablet ? "69%" : "65%",
+                    }}
+                  >
+                    <div className={styles.plusContainer}>
+                      <Image
+                        fill
+                        src="/plusPurple.svg"
+                        style={{ objectFit: "contain" }}
+                        alt={"Missing plusPurple"}
+                      />
+                    </div>
                   </div>
-                </div>
-                <div
-                  style={{
-                    zIndex: 1,
-                    position: "absolute",
-                    bottom: isTablet ? "75%" : "79%",
-                    right: isTablet ? "66%" : "64%",
-                  }}
-                >
-                  <div className={styles.plusContainer}>
-                    <Image
-                      fill
-                      src="/plusLight.svg"
-                      style={{ objectFit: "contain" }}
-                      alt={"Missing plusLight"}
-                    />
+                  <div
+                    style={{
+                      zIndex: 1,
+                      position: "absolute",
+                      bottom: isTablet ? "82%" : "79%",
+                      right: isTablet ? "66%" : "64%",
+                    }}
+                  >
+                    <div className={styles.plusContainer}>
+                      <Image
+                        fill
+                        src="/plusLight.svg"
+                        style={{ objectFit: "contain" }}
+                        alt={"Missing plusLight"}
+                      />
+                    </div>
                   </div>
-                </div>
-                <div
-                  style={{
-                    // for tablet it's unable to see
-                    zIndex: 1,
-                    position: "absolute",
-                    bottom: "50%",
-                    right: "34%",
-                  }}
-                >
-                  <div className={styles.plusContainer}>
-                    <Image
-                      fill
-                      src="/plusPurple.svg"
-                      style={{ objectFit: "contain" }}
-                      alt={"Missing plusPurple"}
-                    />
+                  <div
+                    style={{
+                      // for tablet it's unable to see
+                      zIndex: 1,
+                      position: "absolute",
+                      bottom: "51%",
+                      right: "35%",
+                    }}
+                  >
+                    <div className={styles.plusContainer}>
+                      <Image
+                        fill
+                        src="/plusPurple.svg"
+                        style={{ objectFit: "contain" }}
+                        alt={"Missing plusPurple"}
+                      />
+                    </div>
                   </div>
-                </div>
-                <div
-                  style={{
-                    zIndex: 1,
-                    position: "absolute",
-                    bottom: isTablet ? "28%" : "15%",
-                    right: isTablet ? "43%" : "54%",
-                  }}
-                >
-                  <div className={styles.rectangleBackContainer}>
-                    <Image
-                      fill
-                      src="/recBackPurple.svg"
-                      style={{ objectFit: "contain" }}
-                      alt={"Missing recBackPurple"}
-                    />
+                  <div
+                    style={{
+                      zIndex: 1,
+                      position: "absolute",
+                      bottom: isTablet ? "18%" : "25%",
+                      right: isTablet ? "46%" : "53%",
+                    }}
+                  >
+                    <div className={styles.rectangleBackContainer}>
+                      <Image
+                        fill
+                        src="/recBackPurple.svg"
+                        style={{ objectFit: "contain" }}
+                        alt={"Missing recBackPurple"}
+                      />
+                    </div>
                   </div>
-                </div>
-                <div
-                  style={{
-                    zIndex: 1,
-                    position: "absolute",
-                    bottom: "53%",
-                    right: isTablet ? "23%" : "30%",
-                  }}
-                >
-                  <div className={styles.rectangleBackContainer}>
-                    <Image
-                      fill
-                      src="/recBackPurple.svg"
-                      style={{ objectFit: "contain" }}
-                      alt={"Missing recBackPurple"}
-                    />
+                  <div
+                    style={{
+                      zIndex: 1,
+                      position: "absolute",
+                      bottom: "53%",
+                      right: isTablet ? "23%" : "30%",
+                    }}
+                  >
+                    <div className={styles.rectangleBackContainer}>
+                      <Image
+                        fill
+                        src="/recBackPurple.svg"
+                        style={{ objectFit: "contain" }}
+                        alt={"Missing recBackPurple"}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>

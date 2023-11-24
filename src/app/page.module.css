@@ -35,17 +35,31 @@
 }
 .footballer {
   z-index: 1;
-  width: 100%;
+  width: 36%;
   height: 100%;
+  left: 7%;
   position: absolute;
-  left: -40vh;
-  max-height: 848px;
-  top: 3%;
-  @media screen and (max-width: 960px) {
+  top: 11%;
+
+  @media screen and (max-width: 1440px) {
     width: 90%;
-    left: -37.5vh;
-    top: 13%;
+    left: -30%;
+    top: 11%;
   }
+}
+
+.imageContainerTablet {
+  width: 510px;
+  height: 719px;
+  position: relative;
+  left: calc(55% - 250px);
+}
+
+.imageContainerTabletBas {
+  width: 691px;
+  height: 568px;
+  position: relative;
+  left: calc(46% - 200px);
 }
 
 .basketBaller {
@@ -54,11 +68,11 @@
   position: absolute;
   bottom: 6%;
   max-height: 848px;
-  right: -54vh;
-  @media screen and (max-width: 960px) {
+  right: -25%;
+  @media screen and (max-width: 1440px) {
     width: 90%;
-    right: -33vh;
-    top: -8.5vh;
+    right: -26%;
+    top: 5%;
   }
 }
 
@@ -84,11 +98,11 @@
   justify-content: flex-end;
 }
 .whiteContainer {
-  padding: 3rem 0;
+  padding: 60px 0;
   display: flex;
   justify-content: flex-end;
-  @media screen and (max-width: 960px) {
-    min-height: 250px;
+  @media screen and (max-width: 1440px) {
+    padding: 30px 0;
   }
 }
 
@@ -97,8 +111,8 @@
   background: #f5f4f9;
   display: flex;
   justify-content: flex-end;
-  @media screen and (max-width: 960px) {
-    min-height: 250px;
+  @media screen and (max-width: 1440px) {
+    padding: 30px 0;
   }
 }
 
@@ -107,15 +121,15 @@
   background: #5e3db3;
   display: flex;
   justify-content: flex-end;
-  @media screen and (max-width: 960px) {
-    min-height: 250px;
+  @media screen and (max-width: 1440px) {
+    padding: 30px 0;
   }
 }
 
 .detailContainer {
   display: flex;
   align-items: center;
-  padding-bottom: 2rem;
+  padding-bottom: 20px;
 }
 .countContiner {
   padding-right: 0.5rem;
@@ -154,32 +168,32 @@
 .headContainerBot {
   padding-top: 7.5rem;
   display: flex;
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 1440px) {
     padding-top: 2rem;
   }
 }
 .whiteContainerBot {
-  padding: 3rem 0;
+  padding: 60px 0;
   display: flex;
-  @media screen and (max-width: 960px) {
-    min-height: 150px;
+  @media screen and (max-width: 1440px) {
+    padding: 30px 0;
   }
 }
 
 .greyContainerBot {
-  padding: 3rem 0;
+  padding: 60px 0;
   background: #f5f4f9;
-  @media screen and (max-width: 960px) {
-    min-height: 250px;
+  @media screen and (max-width: 1440px) {
+    padding: 30px 0;
   }
 }
 
 .blueContiner {
-  padding: 3rem 0;
+  padding: 60px 0;
   background: #100c34;
   display: flex;
-  @media screen and (max-width: 960px) {
-    min-height: 250px;
+  @media screen and (max-width: 1440px) {
+    padding: 30px 0;
   }
 }
 .insideContainerBot {
@@ -193,7 +207,7 @@
     color: #e7e7e7;
   }
 
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 1440px) {
     padding-left: 10%;
     width: 100%;
     max-width: 34rem;
@@ -232,11 +246,11 @@
 }
 
 .mobileGreyContainer {
-  min-height: 340px;
+  min-height: 320px;
   background: #f5f4f9;
   display: flex;
   justify-content: flex-end;
-  padding: 1rem 0;
+  margin-top: 1rem;
 }
 
 .mobileContainer {
@@ -246,7 +260,7 @@
 .mobileDetailContainer {
   display: flex;
   align-items: center;
-  padding-bottom: 2rem;
+  padding-bottom: 15px;
 }
 .mobileCountContiner {
   padding-right: 0.5rem;
