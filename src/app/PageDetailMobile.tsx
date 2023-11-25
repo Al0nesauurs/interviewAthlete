@@ -1,14 +1,15 @@
-"use client";
-import Image from "next/image";
-import styles from "./page.module.css";
-import React, { useMemo, useState, useEffect } from "react";
+'use client'
+import Image from 'next/image'
+import React, { useMemo, useState, useEffect } from 'react'
+import styles from './page.module.css'
 
 export default function PageDetail() {
-  const [page, setPage] = useState(0);
-  const [pageBot, setPageBot] = useState(0);
+  const [page, setPage] = useState(0)
+  const [pageBot, setPageBot] = useState(0)
 
-  const [pageTmp, setPageTmp] = useState(0);
-  const [pageBotTmp, setPageBotTmp] = useState(0);
+  const [pageTmp, setPageTmp] = useState(0)
+  const [pageBotTmp, setPageBotTmp] = useState(0)
+
   useEffect(() => {
     function checkDirection(
       isTop: boolean,
@@ -18,67 +19,67 @@ export default function PageDetail() {
       if (isTop) {
         if (touchendX < touchstartX) {
           if (pageTmp === 2) {
-            setPage(() => 0);
+            setPage(() => 0)
           } else {
-            setPage(() => pageTmp + 1);
+            setPage(() => pageTmp + 1)
           }
         }
         if (touchendX > touchstartX) {
           if (pageTmp === 0) {
-            setPage(() => 2);
+            setPage(() => 2)
           } else {
-            setPage(() => pageTmp - 1);
+            setPage(() => pageTmp - 1)
           }
         }
       } else {
         if (touchendX < touchstartX) {
           if (pageBotTmp === 2) {
-            setPageBot(() => 0);
+            setPageBot(() => 0)
           } else {
-            setPageBot(() => pageBotTmp + 1);
+            setPageBot(() => pageBotTmp + 1)
           }
         }
         if (touchendX > touchstartX) {
           if (pageBotTmp === 0) {
-            setPageBot(() => 2);
+            setPageBot(() => 2)
           } else {
-            setPageBot(() => pageBotTmp - 1);
+            setPageBot(() => pageBotTmp - 1)
           }
         }
       }
     }
-    let touchstartX = 0;
-    let touchendX = 0;
+    let touchstartX = 0
+    let touchendX = 0
 
     document
-      ?.getElementById("renderTop")
-      ?.addEventListener("touchstart", (e) => {
-        touchstartX = e.changedTouches[0].screenX;
-      });
+      ?.getElementById('renderTop')
+      ?.addEventListener('touchstart', (e) => {
+        touchstartX = e.changedTouches[0].screenX
+      })
 
-    document?.getElementById("renderTop")?.addEventListener("touchend", (e) => {
-      touchendX = e.changedTouches[0].screenX;
-      checkDirection(true, touchendX, touchstartX);
-    });
+    document?.getElementById('renderTop')?.addEventListener('touchend', (e) => {
+      touchendX = e.changedTouches[0].screenX
+      checkDirection(true, touchendX, touchstartX)
+    })
 
     document
-      ?.getElementById("renderBot")
-      ?.addEventListener("touchstart", (e) => {
-        touchstartX = e.changedTouches[0].screenX;
-      });
+      ?.getElementById('renderBot')
+      ?.addEventListener('touchstart', (e) => {
+        touchstartX = e.changedTouches[0].screenX
+      })
 
-    document?.getElementById("renderBot")?.addEventListener("touchend", (e) => {
-      touchendX = e.changedTouches[0].screenX;
-      checkDirection(false, touchendX, touchstartX);
-    });
-  }, [pageTmp, pageBotTmp]);
+    document?.getElementById('renderBot')?.addEventListener('touchend', (e) => {
+      touchendX = e.changedTouches[0].screenX
+      checkDirection(false, touchendX, touchstartX)
+    })
+  }, [pageTmp, pageBotTmp])
 
   useEffect(() => {
     // prevent infinite
-    if (pageTmp === page && pageBotTmp === pageBot) return;
-    setPageTmp(page);
-    setPageBotTmp(pageBot);
-  }, [page, pageBot, pageBotTmp, pageTmp]);
+    if (pageTmp === page && pageBotTmp === pageBot) return
+    setPageTmp(page)
+    setPageBotTmp(pageBot)
+  }, [page, pageBot, pageBotTmp, pageTmp])
 
   const renderPage = useMemo(() => {
     switch (page) {
@@ -94,8 +95,8 @@ export default function PageDetail() {
                       src="/rectangle.svg"
                       width={19}
                       height={5}
-                      style={{ objectFit: "contain" }}
-                      alt={"Missing Rectangle"}
+                      style={{ objectFit: 'contain' }}
+                      alt={'Missing Rectangle'}
                     />
                   </div>
                 </div>
@@ -107,7 +108,7 @@ export default function PageDetail() {
               </div>
             </div>
           </div>
-        );
+        )
       case 1:
         return (
           <div className={styles.mobileGreyContainer}>
@@ -120,8 +121,8 @@ export default function PageDetail() {
                       src="/rectangle.svg"
                       width={19}
                       height={5}
-                      style={{ objectFit: "contain" }}
-                      alt={"Missing Rectangle"}
+                      style={{ objectFit: 'contain' }}
+                      alt={'Missing Rectangle'}
                     />
                   </div>
                 </div>
@@ -135,7 +136,7 @@ export default function PageDetail() {
               </div>
             </div>
           </div>
-        );
+        )
       case 2:
         return (
           <div className={styles.mobileGreyContainer}>
@@ -148,8 +149,8 @@ export default function PageDetail() {
                       src="/rectangle.svg"
                       width={19}
                       height={5}
-                      style={{ objectFit: "contain" }}
-                      alt={"Missing Rectangle"}
+                      style={{ objectFit: 'contain' }}
+                      alt={'Missing Rectangle'}
                     />
                   </div>
                 </div>
@@ -161,9 +162,9 @@ export default function PageDetail() {
               </div>
             </div>
           </div>
-        );
+        )
     }
-  }, [page]);
+  }, [page])
 
   const renderPageBot = useMemo(() => {
     switch (pageBot) {
@@ -179,8 +180,8 @@ export default function PageDetail() {
                       src="/rectangle.svg"
                       width={19}
                       height={5}
-                      style={{ objectFit: "contain" }}
-                      alt={"Missing Rectangle"}
+                      style={{ objectFit: 'contain' }}
+                      alt={'Missing Rectangle'}
                     />
                   </div>
                 </div>
@@ -192,7 +193,7 @@ export default function PageDetail() {
               </div>
             </div>
           </div>
-        );
+        )
       case 1:
         return (
           <div className={styles.mobileGreyContainer}>
@@ -205,8 +206,8 @@ export default function PageDetail() {
                       src="/rectangle.svg"
                       width={19}
                       height={5}
-                      style={{ objectFit: "contain" }}
-                      alt={"Missing Rectangle"}
+                      style={{ objectFit: 'contain' }}
+                      alt={'Missing Rectangle'}
                     />
                   </div>
                 </div>
@@ -218,7 +219,7 @@ export default function PageDetail() {
               </div>
             </div>
           </div>
-        );
+        )
       case 2:
         return (
           <div className={styles.mobileGreyContainer}>
@@ -231,8 +232,8 @@ export default function PageDetail() {
                       src="/rectangle.svg"
                       width={19}
                       height={5}
-                      style={{ objectFit: "contain" }}
-                      alt={"Missing Rectangle"}
+                      style={{ objectFit: 'contain' }}
+                      alt={'Missing Rectangle'}
                     />
                   </div>
                 </div>
@@ -243,78 +244,78 @@ export default function PageDetail() {
               </div>
             </div>
           </div>
-        );
+        )
     }
-  }, [pageBot]);
+  }, [pageBot])
 
   return (
     <>
       <div className={styles.mobile}>
         <div>
           <div className={styles.mobileMainHeader}>ATHLETS</div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
             <div className={styles.mobileFootballer}>
               <Image
                 fill
-                style={{ zIndex: 2, objectFit: "contain" }}
+                style={{ zIndex: 2, objectFit: 'contain' }}
                 src="/footballerPC.png"
-                alt={"Missing footballerPC"}
+                alt={'Missing footballerPC'}
               />
               <div
                 style={{
-                  position: "relative",
-                  height: "100%",
-                  display: "flex",
-                  justifyContent: "center",
+                  position: 'relative',
+                  height: '100%',
+                  display: 'flex',
+                  justifyContent: 'center',
                 }}
               >
                 <div
                   style={{
                     zIndex: 1,
-                    position: "absolute",
-                    top: "8%",
-                    left: "26%",
+                    position: 'absolute',
+                    top: '8%',
+                    left: '26%',
                   }}
                 >
                   <div className={styles.plusContainer}>
                     <Image
                       fill
                       src="/plusPurple.svg"
-                      style={{ objectFit: "contain" }}
-                      alt={"Missing plusPurple"}
+                      style={{ objectFit: 'contain' }}
+                      alt={'Missing plusPurple'}
                     />
                   </div>
                 </div>
                 <div
                   style={{
                     zIndex: 1,
-                    position: "absolute",
-                    top: "5%",
-                    left: "20%",
+                    position: 'absolute',
+                    top: '5%',
+                    left: '20%',
                   }}
                 >
                   <div className={styles.plusContainer}>
                     <Image
                       fill
                       src="/plusLight.svg"
-                      style={{ objectFit: "contain" }}
-                      alt={"Missing plusLight"}
+                      style={{ objectFit: 'contain' }}
+                      alt={'Missing plusLight'}
                     />
                   </div>
                 </div>
                 <div
                   style={{
                     zIndex: 1,
-                    position: "absolute",
-                    top: "6%",
+                    position: 'absolute',
+                    top: '6%',
                   }}
                 >
                   <div className={styles.rectangleBackMobileContainer}>
                     <Image
                       fill
                       src="/recBackPurple.svg"
-                      style={{ objectFit: "contain" }}
-                      alt={"Missing recBackPurple"}
+                      style={{ objectFit: 'contain' }}
+                      alt={'Missing recBackPurple'}
                     />
                   </div>
                 </div>
@@ -322,42 +323,42 @@ export default function PageDetail() {
             </div>
           </div>
 
-          <div id="renderTop" style={{ position: "relative" }}>
+          <div id="renderTop" style={{ position: 'relative' }}>
             {renderPage}
             <div className={styles.dotContainer}>
               <div className={styles.dot}>
                 <div
                   style={{
-                    borderRadius: "50%",
-                    background: page === 0 ? "#5e3db3" : "#C2C2C2",
-                    width: "10px",
-                    height: "10px",
+                    borderRadius: '50%',
+                    background: page === 0 ? '#5e3db3' : '#C2C2C2',
+                    width: '10px',
+                    height: '10px',
                   }}
                   onClick={() => {
-                    setPage(0);
+                    setPage(0)
                   }}
                 />
 
                 <div
                   style={{
-                    borderRadius: "50%",
-                    background: page === 1 ? "#5e3db3" : "#C2C2C2",
-                    width: "10px",
-                    height: "10px",
+                    borderRadius: '50%',
+                    background: page === 1 ? '#5e3db3' : '#C2C2C2',
+                    width: '10px',
+                    height: '10px',
                   }}
                   onClick={() => {
-                    setPage(1);
+                    setPage(1)
                   }}
                 />
                 <div
                   style={{
-                    borderRadius: "50%",
-                    background: page === 2 ? "#5e3db3" : "#C2C2C2",
-                    width: "10px",
-                    height: "10px",
+                    borderRadius: '50%',
+                    background: page === 2 ? '#5e3db3' : '#C2C2C2',
+                    width: '10px',
+                    height: '10px',
                   }}
                   onClick={() => {
-                    setPage(2);
+                    setPage(2)
                   }}
                 />
               </div>
@@ -366,107 +367,107 @@ export default function PageDetail() {
         </div>
 
         <div>
-          <div style={{ position: "relative", paddingTop: "2rem" }}>
+          <div style={{ position: 'relative', paddingTop: '2rem' }}>
             <div>
               <div className={styles.mobileMainHeader}>PLAYERS</div>
-              <div style={{ display: "flex", justifyContent: "center" }}>
+              <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <div className={styles.mobileFootballer}>
                   <Image
                     fill
-                    style={{ zIndex: 2, objectFit: "contain" }}
+                    style={{ zIndex: 2, objectFit: 'contain' }}
                     src="/basketball.png"
-                    alt={"Missing Footballer"}
+                    alt={'Missing Footballer'}
                   />
                   <div
                     style={{
-                      position: "relative",
-                      height: "100%",
-                      display: "flex",
-                      justifyContent: "center",
+                      position: 'relative',
+                      height: '100%',
+                      display: 'flex',
+                      justifyContent: 'center',
                     }}
                   >
                     <div
                       style={{
                         zIndex: 1,
-                        position: "absolute",
-                        top: "8%",
-                        left: "26%",
+                        position: 'absolute',
+                        top: '8%',
+                        left: '26%',
                       }}
                     >
                       <div className={styles.plusContainer}>
                         <Image
                           fill
                           src="/plusPurple.svg"
-                          style={{ objectFit: "contain" }}
-                          alt={"Missing Footballer"}
+                          style={{ objectFit: 'contain' }}
+                          alt={'Missing Footballer'}
                         />
                       </div>
                     </div>
                     <div
                       style={{
                         zIndex: 1,
-                        position: "absolute",
-                        top: "5%",
-                        left: "20%",
+                        position: 'absolute',
+                        top: '5%',
+                        left: '20%',
                       }}
                     >
                       <div className={styles.plusContainer}>
                         <Image
                           fill
                           src="/plusLight.svg"
-                          style={{ objectFit: "contain" }}
-                          alt={"Missing Footballer"}
+                          style={{ objectFit: 'contain' }}
+                          alt={'Missing Footballer'}
                         />
                       </div>
                     </div>
                     <div
                       style={{
                         zIndex: 1,
-                        position: "absolute",
-                        top: "55%",
-                        right: "8%",
+                        position: 'absolute',
+                        top: '55%',
+                        right: '8%',
                       }}
                     >
                       <div className={styles.plusContainer}>
                         <Image
                           fill
                           src="/plusPurple.svg"
-                          style={{ objectFit: "contain" }}
-                          alt={"Missing Footballer"}
+                          style={{ objectFit: 'contain' }}
+                          alt={'Missing Footballer'}
                         />
                       </div>
                     </div>
                     <div
                       style={{
                         zIndex: 1,
-                        position: "absolute",
-                        top: "48%",
-                        left: "14%",
+                        position: 'absolute',
+                        top: '48%',
+                        left: '14%',
                       }}
                     >
                       <div className={styles.rectangleBackMobile2Container}>
                         <Image
                           fill
                           src="/recBackPurple.svg"
-                          style={{ objectFit: "contain" }}
-                          alt={"Missing Footballer"}
+                          style={{ objectFit: 'contain' }}
+                          alt={'Missing Footballer'}
                         />
                       </div>
                     </div>
                     <div
                       style={{
                         zIndex: 1,
-                        position: "absolute",
-                        top: "11%",
-                        right: "10%",
+                        position: 'absolute',
+                        top: '11%',
+                        right: '10%',
                       }}
                     >
                       <div className={styles.rectangleBackMobile3Container}>
                         <Image
                           fill
                           src="/recBackPurple.svg"
-                          style={{ objectFit: "contain" }}
-                          alt={"Missing Footballer"}
+                          style={{ objectFit: 'contain' }}
+                          alt={'Missing Footballer'}
                         />
                       </div>
                     </div>
@@ -474,42 +475,42 @@ export default function PageDetail() {
                 </div>
               </div>
 
-              <div id="renderBot" style={{ position: "relative" }}>
+              <div id="renderBot" style={{ position: 'relative' }}>
                 {renderPageBot}
                 <div className={styles.dotContainer}>
                   <div className={styles.dot}>
                     <div
                       style={{
-                        borderRadius: "50%",
-                        background: pageBot === 0 ? "#5e3db3" : "#C2C2C2",
-                        width: "10px",
-                        height: "10px",
+                        borderRadius: '50%',
+                        background: pageBot === 0 ? '#5e3db3' : '#C2C2C2',
+                        width: '10px',
+                        height: '10px',
                       }}
                       onClick={() => {
-                        setPageBot(0);
+                        setPageBot(0)
                       }}
                     />
 
                     <div
                       style={{
-                        borderRadius: "50%",
-                        background: pageBot === 1 ? "#5e3db3" : "#C2C2C2",
-                        width: "10px",
-                        height: "10px",
+                        borderRadius: '50%',
+                        background: pageBot === 1 ? '#5e3db3' : '#C2C2C2',
+                        width: '10px',
+                        height: '10px',
                       }}
                       onClick={() => {
-                        setPageBot(1);
+                        setPageBot(1)
                       }}
                     />
                     <div
                       style={{
-                        borderRadius: "50%",
-                        background: pageBot === 2 ? "#5e3db3" : "#C2C2C2",
-                        width: "10px",
-                        height: "10px",
+                        borderRadius: '50%',
+                        background: pageBot === 2 ? '#5e3db3' : '#C2C2C2',
+                        width: '10px',
+                        height: '10px',
                       }}
                       onClick={() => {
-                        setPageBot(2);
+                        setPageBot(2)
                       }}
                     />
                   </div>
@@ -520,5 +521,5 @@ export default function PageDetail() {
         </div>
       </div>
     </>
-  );
+  )
 }
