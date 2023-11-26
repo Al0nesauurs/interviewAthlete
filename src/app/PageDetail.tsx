@@ -245,7 +245,7 @@ export default function PageDetail() {
                       zIndex: 1,
                       position: 'absolute',
                       bottom: '51%',
-                      right: '35%',
+                      right: '21%',
                     }}
                   >
                     <div className={styles.plusContainer}>
@@ -278,8 +278,8 @@ export default function PageDetail() {
                     style={{
                       zIndex: 1,
                       position: 'absolute',
-                      bottom: '53%',
-                      right: isTablet ? '23%' : '30%',
+                      bottom: '49%',
+                      right: isTablet ? '23%' : '11%',
                     }}
                   >
                     <div className={styles.rectangleBackContainer}>

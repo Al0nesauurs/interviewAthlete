@@ -1,5 +1,5 @@
 .root {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: #ffffff;
   color: #000000;
 }
@@ -14,7 +14,7 @@
 .rectangleBackContainer {
   position: relative;
   width: 209.29151916503906px;
-  height: 233.7168731689453px;
+  height: 312.7168731689453px;
 }
 
 .rectangleBackMobileContainer {
@@ -59,18 +59,19 @@
   width: 691px;
   height: 568px;
   position: relative;
-  left: calc(46% - 200px);
+  left: calc(-6% - 200px);
 }
 
 .basketBaller {
-  width: 100%;
+  width: 60%;
+  max-width: 940px;
   height: 100%;
   position: absolute;
   bottom: 6%;
   max-height: 848px;
-  right: -25%;
+  right: 0%;
   @media screen and (max-width: 1440px) {
-    width: 90%;
+    width: 50%;
     right: -26%;
     top: 5%;
   }
@@ -226,7 +227,7 @@
 /************************** Mobile ***********************************/
 
 .mobile {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: #ffffff;
   color: #000000;
 }
@@ -235,7 +236,7 @@
   font-size: 50px;
   color: #e7e7e7;
   line-height: 58.59px;
-  padding: 0 2rem;
+  padding: 20px 20px 15px;
 }
 .mobileFootballer {
   z-index: 10;
@@ -246,7 +247,6 @@
 }
 
 .mobileGreyContainer {
-  min-height: 320px;
   background: #f5f4f9;
   display: flex;
   justify-content: flex-end;
@@ -287,7 +287,7 @@
 }
 .dotContainer {
   position: absolute;
-  bottom: 43px;
+  bottom: 25px;
   left: calc(50% - 25px);
 }
 .dot {

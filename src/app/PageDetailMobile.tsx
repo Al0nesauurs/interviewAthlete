@@ -367,7 +367,7 @@ export default function PageDetail() {
         </div>
 
         <div>
-          <div style={{ position: 'relative', paddingTop: '2rem' }}>
+          <div style={{ position: 'relative' }}>
             <div>
               <div className={styles.mobileMainHeader}>PLAYERS</div>
               <div style={{ display: 'flex', justifyContent: 'center' }}>
